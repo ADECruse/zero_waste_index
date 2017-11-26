@@ -3,4 +3,8 @@ class Product < ApplicationRecord
   validates :packaging, presence: true
   validates :location,  presence: true
 
+  def self.search(search)
+  where("item LIKE ?", "%#{search}%")
+  end
+
 end

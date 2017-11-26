@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+      # @product = Product.find_by(item: "Rice")
   end
 
   def about
@@ -7,4 +8,6 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+
 end

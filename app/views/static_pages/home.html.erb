@@ -1,3 +1,13 @@
 <% provide(:title, "Home") %>
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+
+
+<%= form_tag(products_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Peanuts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<!-- <% if @products.present? %>
+  <%= render @products %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %> -->
