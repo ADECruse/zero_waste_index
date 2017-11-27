@@ -1,16 +1,28 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
-<%= form_tag(products_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Peanuts" %>
-<%= submit_tag "Search" %>
-<% end %>
 
-<% @products.each do |product| %>
-  <p><%= product.item %></p>
-  <p><%= product.packaging %></p>
-  <p><%= product.location %></p>
-<%end%>
+<div class="starter-template">
+  <h1>Zero Waste Index</h1>
+  <p class="lead">Use the search button to find stores near you carrying products with zero packaging.</p>
 
-<% if @products.blank? %>
-  <h4>There are no products containing the term <%= params[:search] %>.</h4>
-<% end %>
+  <%= form_tag(products_path, :method => "get", :class => "input-group-btn") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Product name...", class: "form-control" %>
+  <%= submit_tag "Search", class: "btn btn-light" %>
+  <% end %>
+  <div class="starter-template">
+    <% @products.each do |product| %>
+      <h3>Results for <%= product.item %></h3>
+      <h4>Buy with zero packaging from these stores</h4>
+      <p><%= product.location %></p>
+    <%end%>
+
+    <% if @products.blank? %>
+      <h4>There are no products containing the term <%= params[:search] %>.</h4>
+    <% end %>
+  </div>
+</div>
+  <!-- <div class="starter-template">
+
+  </div>
+
+  <div class="starter-template">
+
+  </div> -->
