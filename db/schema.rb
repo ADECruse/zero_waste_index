@@ -16,6 +16,10 @@ ActiveRecord::Schema.define(version: 20171122211757) do
     t.string "item"
     t.string "packaging"
     t.text "location"
+    t.text "description"
+    t.text "picture"
+    t.integer "rating"
+    t.boolean "plastic_free"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
