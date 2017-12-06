@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   validates :location,  presence: true
 
   def self.search(search)
-  where("item LIKE ?", "%#{search}%")
+  where("item ILIKE ?", "%#{search}%")
   end
 
 end
