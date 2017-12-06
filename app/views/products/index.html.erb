@@ -1,7 +1,7 @@
 
 <div class="starter-template">
   <h1>Zero Waste Index</h1>
-  <p class="lead">Use the search button to find stores near you carrying products with zero packaging.</p>
+  <p class="lead">To find stores carrying products with zero packaging simply use the search button or browse the index below</p>
 
   <%= form_tag(products_path, :method => "get", :class => "input-group-btn") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Product name...", class: "form-control" %>
@@ -20,7 +20,7 @@
         <% end %>
         <div class="card-body">
           <h3 class="card-title"><%= product.item %></h3>
-          <h4 class="card-title">Description</h4>
+          <h5 class="card-title">Description</h5>
           <p class="card-text">
             <% if product.description.blank? == true %>
               None available
@@ -28,9 +28,9 @@
               <%= product.description %>
             <% end %>
           </p>
-          <h4 class="card-title">Packaging</h4>
+          <h5 class="card-title">Packaging</h5>
           <p class="card-text"><%= product.packaging %></p>
-          <h4 class="card-title">Plastic Free?</h4>
+          <h5 class="card-title">Plastic Free?</h5>
           <p class="card-text">
             <% if product.plastic_free == true %>
               Yes
@@ -38,9 +38,9 @@
               No
             <% end %>
           </p>
-          <h4 class="card-title">Star Rating</h4>
+          <h5 class="card-title">Star Rating</h5>
           <p class="card-text"><%= product.rating %>/5</p>
-          <h4 class="card-title">Where?</h4>
+          <h5 class="card-title">Where?</h5>
           <p class="card-text"><%= product.location %></p>
         </div>
       </div>
@@ -48,6 +48,6 @@
     <%end%>
 </div>
     <% if @products.blank? %>
-      <h4>There are no products containing the term <%= params[:search] %>.</h4>
+      <h5>There are no products containing the term <%= params[:search] %>.</h5>
     <% end %>
   <!-- </div> -->
