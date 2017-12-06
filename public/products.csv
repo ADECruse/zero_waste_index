@@ -1,35 +1,35 @@
-picture,item,description,packaging,rating,location,plastic_free
-Apples.jpg,Apples,,None,5,Widely Available,TRUE
-ArborioRice.jpg,Arborio Rice,,None,5,Specific Bristol Shops,TRUE
-BakedBeans.jpg,Baked Beans,,Tin Can,3,Widely Available,TRUE
-BalsamicVinegar.jpg,Balsamic Vinegar,,Glass Bottle,3,Widely Available,FALSE
-Bananas.jpg,Bananas,,None,5,Widely Available,TRUE
-BrownRice.jpg,Brown Rice,,None,5,Specific Bristol Shops,TRUE
-Cheese.jpg,Cheese,,Plastic Film,1,Widely Available,FALSE
-Chocolate.jpg,Chocolate,,Paper and Cardboard,3,Widely Available,TRUE
-ChoppedTomatoes.jpg,Chopped Tomatoes,,Tin Can,3,Widely Available,TRUE
-CoconutOil.jpg,Coconut Oil,,Glass Jar,3,Widely Available,FALSE
-CousCous.jpg,Cous Cous,,None,5,Specific Bristol Shops,TRUE
-GoldenSyrup.jpg,Golden Syrup,,Tin,3,Widely Available,TRUE
-GravyGranules.jpg,Gravy Granules,,Cardboard Tube,3,Widely Available,TRUE
-Lentils.jpg,Lentils,,None,5,Specific Bristol Shops,TRUE
-Mayonnaise.jpg,Mayonnaise,,Glass Jar,3,Widely Available,FALSE
-NaanBread.jpg,Naan Bread,,Plastic Film,1,Widely Available,FALSE
-Oats.jpg,Oats,,None,5,Specific Bristol Shops,TRUE
-OliveOil.jpg,Olive Oil,,Glass Bottle,3,Widely Available,FALSE
-PeanutButter.jpg,Peanut Butter,,Glass Jar,3,Widely Available,FALSE
-Peanuts.jpg,Peanuts,Red skinned shelled peanuts.,None,5,Specific Bristol Shops,TRUE
-PotatoWaffles.jpg,Potato Waffles,,Cardboard Box,3,Widely Available,TRUE
-Quinoa.jpg,Quinoa,,None,5,Specific Bristol Shops,TRUE
-RiceCrackers.jpg,Rice Crackers,,None,5,Specific Bristol Shops,TRUE
-Salt.jpg,Salt,,Plastic Bag,1,Widely Available,FALSE
-SoyMilk.jpg,Soy Milk,,TetraPak,2,Widely Available,FALSE
-SoySauce.jpg,Soy Sauce,,Glass Bottle,3,Widely Available,FALSE
-Spaghetti.jpg,Spaghetti,,Plastic Film,1,Widely Available,FALSE
-Squash.jpg,Squash,,Glass Bottle,3,Widely Available,FALSE
-StockCubes.jpg,Stock Cubes,,Foil in Cardboard Box,3,Widely Available,TRUE
-Tea.jpg,Tea,,None,5,Specific Bristol Shops,TRUE
-ToiletPaper.jpg,Toilet Paper,,Paper and Cardboard,3,Online Only,TRUE
-WhiteRice.jpg,White Rice,,None,5,Specific Bristol Shops,TRUE
-WhiteVinegar.jpg,White Vinegar,,Glass Bottle,3,Widely Available,FALSE
-Yeast.jpg,Yeast,,Plastic Sachets in Cardboard Box,1,Widely Available,FALSE
+item,picture,description,packaging,rating,location,plastic_free
+Apples,Apples.jpg,,None,5,Widely Available,TRUE
+Arborio Rice,ArborioRice.jpg,,None,5,Specific Bristol Shops,TRUE
+Baked Beans,BakedBeans.jpg,,Tin Can,3,Widely Available,TRUE
+Balsamic Vinegar,BalsamicVinegar.jpg,,Glass Bottle,3,Widely Available,FALSE
+Bananas,Bananas.jpg,,None,5,Widely Available,TRUE
+Brown Rice,BrownRice.jpg,,None,5,Specific Bristol Shops,TRUE
+Cheese,Cheese.jpg,,Plastic Film,1,Widely Available,FALSE
+Chocolate,Chocolate.jpg,,Paper and Cardboard,3,Widely Available,TRUE
+Chopped Tomatoes,ChoppedTomatoes.jpg,,Tin Can,3,Widely Available,TRUE
+Coconut Oil,CoconutOil.jpg,,Glass Jar,3,Widely Available,FALSE
+Cous Cous,CousCous.jpg,,None,5,Specific Bristol Shops,TRUE
+Golden Syrup,GoldenSyrup.jpg,,Tin,3,Widely Available,TRUE
+Gravy Granules,GravyGranules.jpg,,Cardboard Tube,3,Widely Available,TRUE
+Lentils,Lentils.jpg,,None,5,Specific Bristol Shops,TRUE
+Mayonnaise,Mayonnaise.jpg,,Glass Jar,3,Widely Available,FALSE
+Naan Bread,NaanBread.jpg,,Plastic Film,1,Widely Available,FALSE
+Oats,Oats.jpg,,None,5,Specific Bristol Shops,TRUE
+Olive Oil,OliveOil.jpg,,Glass Bottle,3,Widely Available,FALSE
+Peanut Butter,PeanutButter.jpg,,Glass Jar,3,Widely Available,FALSE
+Peanuts,Peanuts.jpg,Red skinned shelled peanuts.,None,5,Specific Bristol Shops,TRUE
+Potato Waffles,PotatoWaffles.jpg,,Cardboard Box,3,Widely Available,TRUE
+Quinoa,Quinoa.jpg,,None,5,Specific Bristol Shops,TRUE
+Rice Crackers,RiceCrackers.jpg,,None,5,Specific Bristol Shops,TRUE
+Salt,Salt.jpg,,Plastic Bag,1,Widely Available,FALSE
+Soy Milk,SoyMilk.jpg,,TetraPak,2,Widely Available,FALSE
+Soy Sauce,SoySauce.jpg,,Glass Bottle,3,Widely Available,FALSE
+Spaghetti,Spaghetti.jpg,,Plastic Film,1,Widely Available,FALSE
+Squash,Squash.jpg,,Glass Bottle,3,Widely Available,FALSE
+Stock Cubes,StockCubes.jpg,,Foil in Cardboard Box,3,Widely Available,TRUE
+Tea,Tea.jpg,,None,5,Specific Bristol Shops,TRUE
+Toilet Paper,ToiletPaper.jpg,,Paper and Cardboard,3,Online Only,TRUE
+White Rice,WhiteRice.jpg,,None,5,Specific Bristol Shops,TRUE
+White Vinegar,WhiteVinegar.jpg,,Glass Bottle,3,Widely Available,FALSE
+Yeast,Yeast.jpg,,Plastic Sachets in Cardboard Box,1,Widely Available,FALSE
