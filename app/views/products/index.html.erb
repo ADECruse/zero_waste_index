@@ -7,22 +7,47 @@
   <%= text_field_tag :search, params[:search], placeholder: "Product name...", class: "form-control" %>
   <%= submit_tag "Search", class: "btn btn-light" %>
   <% end %>
-  <div class="starter-template">
-    <% @products.each do |product| %>
-      <h3>Results for <%= product.item %></h3>
-      <h4>Buy with zero packaging from these stores</h4>
-      <p><%= product.location %></p>
-    <%end%>
+</div>
 
+    <div class="row justify-content-md-center">
+    <% @products.each do |product| %>
+    <div class="col-md-4">
+      <div class="card text-center bg-light mb-3">
+        <% if asset_exist?(product.picture.downcase) %>
+          <%= image_tag(product.picture.downcase, class: "card-img-top") %>
+        <% else %>
+          <%= image_tag("placeholder.svg", class: "card-img-top") %>
+        <% end %>
+        <div class="card-body">
+          <h3 class="card-title"><%= product.item %></h3>
+          <h4 class="card-title">Description</h4>
+          <p class="card-text">
+            <% if product.description.blank? == true %>
+              None available
+            <% else %>
+              <%= product.description %>
+            <% end %>
+          </p>
+          <h4 class="card-title">Packaging</h4>
+          <p class="card-text"><%= product.packaging %></p>
+          <h4 class="card-title">Plastic Free?</h4>
+          <p class="card-text">
+            <% if product.plastic_free == true %>
+              Yes
+            <% else %>
+              No
+            <% end %>
+          </p>
+          <h4 class="card-title">Star Rating</h4>
+          <p class="card-text"><%= product.rating %>/5</p>
+          <h4 class="card-title">Where?</h4>
+          <p class="card-text"><%= product.location %></p>
+        </div>
+      </div>
+    </div>
+    <%end%>
+</div>
     <% if @products.blank? %>
       <h4>There are no products containing the term <%= params[:search] %>.</h4>
     <% end %>
-  </div>
-</div>
-  <!-- <div class="starter-template">
-
-  </div>
-
-  <div class="starter-template">
-
-  </div> -->
+  <!-- </div> -->
