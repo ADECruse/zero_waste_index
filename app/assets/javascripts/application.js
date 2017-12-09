@@ -16,3 +16,15 @@
 //= require jquery3
 //= require bootstrap-sprockets
 //= require_tree .
+
+function initMap() {
+        var bristol = {lat: 51.467978, lng: -2.592091};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: bristol
+        });
+        var marker = new google.maps.Marker({
+          position: bristol,
+          map: map
+        });
+      }
