@@ -13,7 +13,7 @@ Built using the Rails 5 and Bootstrap frameworks.
 Features
 --------
 
-###Completed
+### Completed
 
 * Search and find products by name e.g "Apple".
 
@@ -23,7 +23,7 @@ Features
 
 * Currently can import product data from a Excel style .CSV document.
 
-###To-Do
+### To-Do
 
 * Add store location database linked with the product database using a has_many relationship.
 
