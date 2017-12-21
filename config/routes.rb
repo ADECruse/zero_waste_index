@@ -5,11 +5,13 @@ Rails.application.routes.draw do
 
   get 'products/index'
 
+  get 'tags/:tag', to: 'products#index', as: :tag
+
   root 'products#index'
 
   get 'static_pages/home'
 
-  
+
   get  '/contact', to: 'static_pages#contact'
   get  '/about', to: 'static_pages#about'
 

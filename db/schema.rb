@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122211757) do
+ActiveRecord::Schema.define(version: 20171214163119) do
 
   create_table "products", force: :cascade do |t|
     t.string "item"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(version: 20171122211757) do
     t.integer "rating"
     t.text "location"
     t.boolean "plastic_free"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_taggings_on_product_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
