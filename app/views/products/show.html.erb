@@ -1,2 +1,49 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @product.item %>
+</p>
+
+<p>
+  <strong>Plastic free:</strong>
+  <%= @product.plastic_free %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Packaging:</strong>
+  <%= @product.packaging %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @product.rating %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @product.picture %>
+</p>
+
+<p>
+  <strong>Available here:</strong>
+  <ul>
+  <% @product.locations.each do |l| %>
+    <li> <%= l.store %> </li>
+  <% end %>
+  </ul>
+</p>
+
+<iframe width="300" height="300" frameborder="0" style="border:0"
+src="<%= google_map(@product.locations.first.place_id) %>
+"
+allowfullscreen>
+</iframe>
+<!-- [ @product.locations.first.latitude, @product.locations.first.longitude ].join(',') -->
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

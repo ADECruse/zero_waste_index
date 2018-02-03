@@ -10,16 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122211757) do
+ActiveRecord::Schema.define(version: 20180203083524) do
+
+  create_table "location_products", force: :cascade do |t|
+    t.integer "location_id"
+    t.integer "product_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "store"
+    t.string "latitude"
+    t.string "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "place_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "item"
-    t.string "packaging"
-    t.text "location"
+    t.string "picture"
     t.text "description"
-    t.text "picture"
+    t.string "packaging"
     t.integer "rating"
     t.boolean "plastic_free"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_taggings_on_product_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,54 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item %>
+    <%= form.text_field :item, id: :product_item %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plastic_free %>
+    <%= form.text_field :plastic_free, id: :product_plastic_free %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :packaging %>
+    <%= form.text_field :packaging, id: :product_packaging %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, id: :product_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :product_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_check_boxes :location_ids, Location.all, :id, :store do |m| %>
+    <%= m.check_box %> <%= m.label %>
+    <% end %>
+  </div>
+  <!-- field where you select which location a product belongs to -->
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
