@@ -20,7 +20,8 @@
         <% end %>
         <div class="card-body">
           <h3 class="card-title"><%= product.item %></h3>
-          <h5 class="card-title">Description</h5>
+          <%= link_to 'Show', product, type: "button", class: "btn btn-light" %>
+          <!-- <h5 class="card-title">Description</h5>
           <p class="card-text">
             <% if product.description.blank? == true %>
               None available
@@ -37,7 +38,7 @@
             <% else %>
               No
             <% end %>
-          </p>
+          </p> -->
           <h5 class="card-title">Star Rating</h5>
           <p class="card-text"><%= product.rating %>/5</p>
         </div>

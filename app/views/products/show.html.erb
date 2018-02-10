@@ -45,5 +45,5 @@ src="<%= google_map(@product.locations.first.place_id) %>
 allowfullscreen>
 </iframe>
 <!-- [ @product.locations.first.latitude, @product.locations.first.longitude ].join(',') -->
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-light" %>
+<%= link_to 'Back', products_path, class: "btn btn-light" %>

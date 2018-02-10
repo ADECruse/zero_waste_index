@@ -23,10 +23,10 @@ Features
 
 * Currently can import product data from a Excel style .CSV document.
 
-### To-Do
-
 * Add store location database linked with the product database using a has_many relationship.
 
 * Connect the Google Maps API so users can use maps to find each products store.
+
+### To-Do
 
 * Add a tagging system so each product can be found using a keyword e.g "Fruit" would find "Apple".

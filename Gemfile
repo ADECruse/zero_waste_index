@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.3'
 
 gem 'sprockets-rails'
+
+gem 'devise'
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
