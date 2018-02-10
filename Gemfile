@@ -18,6 +18,8 @@ gem 'popper_js', '~> 1.12.3'
 gem 'sprockets-rails'
 
 gem 'devise'
+
+gem "cancan"
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
