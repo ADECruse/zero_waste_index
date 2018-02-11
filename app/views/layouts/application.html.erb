@@ -29,12 +29,26 @@
           <li class="<%= 'nav-item active' if current_page?(contact_path) %>">
             <%= link_to "Contact", contact_path, class:"nav-link" %>
           </li>
+          <% if current_admin %>
+            <li class="<%= 'nav-item active' if current_page?(products_new_path) %>">
+              <%= link_to "New", products_new_path, class:"nav-link" %>
+            </li>
+            <li class="">
+              <%= link_to "Sign out", destroy_admin_session_path, :method => :delete, class:"nav-link" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
+    <div class="jumbotron">
+        <div class="container">
+
+        </div>
+    </div>
     <main role="main" class="container">
 
       <%= yield %>
+
     </main><!-- /.container -->
      <%= debug(params) if Rails.env.development? %>
   </body>

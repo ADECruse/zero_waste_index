@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    authorize! :new, @product
   end
 
   def create
@@ -30,7 +31,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
-
+    authorize! :create, @product
   end
 
   def update
@@ -43,7 +44,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
-
+    authorize! :update, @product
   end
 
   def destroy
@@ -52,7 +53,7 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
-
+    authorize! :destroy, @product
   end
 
   private

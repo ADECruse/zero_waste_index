@@ -20,6 +20,8 @@ gem 'sprockets-rails'
 gem 'devise'
 
 gem "cancan"
+
+gem "font-awesome-rails"
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server

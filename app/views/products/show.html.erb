@@ -1,49 +1,54 @@
 <p id="notice"><%= notice %></p>
-
+<div class="row">
+  <div class="col-sm-4">
+    <p>
+      <%= image_tag(@product.picture.downcase, size: 300) %>
+      <!-- <%= @product.picture %> -->
+    </p>
+  </div>
+  <div class="col-sm-8">
+    <p>
+      <strong>Item:</strong>
+      <%= @product.item %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @product.description %>
+    </p>
+    <p>
+      <strong>Packaging:</strong>
+      <%= @product.packaging %>
+    </p>
+    <p>
+      <strong>Rating:</strong>
+      <%= @product.rating %>
+      <i class="glyphicon glyphicon-star-empty"></i>
+      <span class="glyphicon glyphicon-star-empty"></span>
+    </p>
+    <p>
+      <strong>Plastic free?</strong>
+      <%= @product.plastic_free %>
+    </p>
+  </div>
+</div>
 <p>
-  <strong>Item:</strong>
-  <%= @product.item %>
+  <strong>Available here</strong>
 </p>
-
-<p>
-  <strong>Plastic free:</strong>
-  <%= @product.plastic_free %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Packaging:</strong>
-  <%= @product.packaging %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @product.rating %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @product.picture %>
-</p>
-
-<p>
-  <strong>Available here:</strong>
-  <ul>
-  <% @product.locations.each do |l| %>
-    <li> <%= l.store %> </li>
+<div class="row">
+      <% @product.locations.each do |l| %>
+        <div class="col-sm-4">
+          <h5><%= l.store %></h5>
+          <iframe width="300" height="300" frameborder="0" style="border:0"
+          src="<%= google_map(l.place_id) %>
+          "
+          allowfullscreen>
+          </iframe>
+        </div>
+      <% end %>
+</div>
+<div class = "text-center">
+  <% if current_admin %>
+    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-light" %>
   <% end %>
-  </ul>
-</p>
-
-<iframe width="300" height="300" frameborder="0" style="border:0"
-src="<%= google_map(@product.locations.first.place_id) %>
-"
-allowfullscreen>
-</iframe>
-<!-- [ @product.locations.first.latitude, @product.locations.first.longitude ].join(',') -->
-<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-light" %>
-<%= link_to 'Back', products_path, class: "btn btn-light" %>
+  <%= link_to 'Back', products_path, class: "btn btn-light" %>
+</div>
