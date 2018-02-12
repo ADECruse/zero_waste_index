@@ -21,13 +21,19 @@
     </p>
     <p>
       <strong>Rating:</strong>
-      <%= @product.rating %>
-      <i class="glyphicon glyphicon-star-empty"></i>
-      <span class="glyphicon glyphicon-star-empty"></span>
+      <% i = 0 %>
+      <% while @product.rating > i do %>
+        <%= fa_icon "star" %>
+        <% i +=1 %>
+      <%end%>
     </p>
     <p>
-      <strong>Plastic free?</strong>
-      <%= @product.plastic_free %>
+      <strong>Plastic free? </strong>
+      <% if @product.plastic_free %>
+        Yes
+      <% else %>
+        No
+      <% end %>
     </p>
   </div>
 </div>

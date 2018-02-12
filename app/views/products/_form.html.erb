@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <%= form.label :plastic_free %>
-    <%= form.text_field :plastic_free, id: :product_plastic_free, placeholder: "True or False", class: "form-control" %>
+    <%= form.check_box :plastic_free, id: :product_plastic_free, class: "form-control" %>
   </div>
 
   <div class="form-group">
@@ -50,12 +50,13 @@
     <%= form.text_field :picture, id: :product_picture, placeholder: "apple.jpg", class: "form-control" %>
   </div>
 
+  <!-- form check field where you select which location a product belongs to -->
+
   <div class="form-check">
     <%= form.collection_check_boxes :location_ids, Location.all, :id, :store do |m| %>
     <%= m.check_box %> <%= m.label class: "form-check-label"%>
     <% end %>
   </div>
-  <!-- field where you select which location a product belongs to -->
 
   <div class="actions text-center">
     <%= form.submit class: "btn btn-light"%>

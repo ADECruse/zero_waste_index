@@ -22,8 +22,12 @@
         <div class="col-sm-8">
             <h4><%= product.item %></h4>
             <p>
-              <strong>Rating:</strong>
-              <%= product.rating %>
+
+              <% i = 0 %>
+              <% while product.rating > i do %>
+                <%= fa_icon "star 2x" %>
+                <% i +=1 %>
+              <%end%>
             </p>
 
             <i class="glyphicon glyphicon-star-empty"></i>
