@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
   def setup
-    @product = Product.new(item:"Peanuts", packaging: "Partial", location: "Example Address")
+    @product = Product.new(item:"Example",picture:"example.jpg",description: "Example description",packaging: "Example packet",rating:1,plastic_free: true)
   end
 
   test "should be vaild" do
@@ -14,13 +14,23 @@ class ProductTest < ActiveSupport::TestCase
    assert_not @product.valid?
   end
 
+  test "description should be present" do
+   @product.description = ""
+   assert_not @product.valid?
+  end
+
   test "packaging should be present" do
    @product.packaging = ""
    assert_not @product.valid?
   end
 
-  test "location should be present" do
-   @product.location = ""
+  test "rating should be present" do
+   @product.rating = 1..5
+   assert_not @product.valid?
+  end
+
+  test "plastic_free should be present" do
+   @product.plastic_free = true
    assert_not @product.valid?
   end
 

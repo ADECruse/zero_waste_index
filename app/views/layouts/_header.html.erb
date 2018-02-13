@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <%= link_to "Zero Waste Index", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="<%= 'nav-item active' if current_page?(root_path) %>">
+        <%= link_to "Home", root_path, class:"nav-link" %>
+      </li>
+      <li class="<%= 'nav-item active' if current_page?(about_path) %>">
+        <%= link_to "About", about_path, class:"nav-link" %>
+      </li>
+      <li class="<%= 'nav-item active' if current_page?(howto_path) %>">
+        <%= link_to "How To", howto_path, class:"nav-link" %>
+      </li>
+      <li class="<%= 'nav-item active' if current_page?(contact_path) %>">
+        <%= link_to "Contact", contact_path, class:"nav-link" %>
+      </li>
+      <% if current_admin %>
+        <li class="<%= 'nav-item active' if current_page?(products_new_path) %>">
+          <%= link_to "New", products_new_path, class:"nav-link" %>
+        </li>
+        <li class="">
+          <%= link_to "Sign out", destroy_admin_session_path, :method => :delete, class:"nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

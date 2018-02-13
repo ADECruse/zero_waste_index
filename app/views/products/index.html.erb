@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-sm-4">
           <% if asset_exist?(product.picture.downcase) %>
-            <%= image_tag(product.picture.downcase, size: 150) %>
+            <%= link_to(image_tag(product.picture.downcase, size: 150), product) %>
           <% else %>
             <%= image_tag("placeholder.svg", size: 150) %>
           <% end %>
@@ -30,11 +30,7 @@
                 <% i +=1 %>
               <%end%>
             </p>
-
-            <i class="glyphicon glyphicon-star-empty"></i>
-            <span class="glyphicon glyphicon-star-empty"></span><b>
             <%= link_to 'More info', product, class: "btn btn-light" %>
-
           </p>
         </div>
         <!-- <div class="card text-center bg-light mb-3">

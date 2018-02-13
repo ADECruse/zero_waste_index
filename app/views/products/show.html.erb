@@ -1,59 +1,59 @@
 
 <% provide(:title, "#{@product.item}") %>
 <p id="notice"><%= notice %></p>
-
 <div class="row">
   <div class="col-sm-4">
     <p>
       <%= image_tag(@product.picture.downcase, size: 300) %>
-      <!-- <%= @product.picture %> -->
     </p>
   </div>
   <div class="col-sm-8">
-    <p>
-      <strong>Item:</strong>
-      <%= @product.item %>
-    </p>
-    <p>
-      <strong>Description:</strong>
-      <%= @product.description %>
-    </p>
-    <p>
-      <strong>Packaging:</strong>
-      <%= @product.packaging %>
-    </p>
-    <p>
-      <strong>Rating:</strong>
-      <% i = 0 %>
-      <% while @product.rating > i do %>
-        <%= fa_icon "star" %>
-        <% i +=1 %>
-      <%end%>
-    </p>
-    <p>
-      <strong>Plastic free? </strong>
-      <% if @product.plastic_free %>
-        Yes
-      <% else %>
-        No
-      <% end %>
-    </p>
+    <dl class="row">
+      <dt class="col-sm-3">Item</dt>
+      <dd class="col-sm-9"><%= @product.item %></dd>
+
+      <dt class="col-sm-3">Description</dt>
+      <dd class="col-sm-9">
+        <p><%= @product.description %></p>
+      </dd>
+
+      <dt class="col-sm-3">Packaging</dt>
+      <dd class="col-sm-9"><%= @product.packaging %></dd>
+
+      <dt class="col-sm-3">Rating</dt>
+      <dd class="col-sm-9">
+        <% i = 0 %>
+        <% while @product.rating > i do %>
+          <%= fa_icon "star" %>
+          <% i +=1 %>
+        <%end%>
+      </dd>
+
+      <dt class="col-sm-3">Plastic free?</dt>
+      <dd class="col-sm-9">
+        <% if @product.plastic_free %>
+          Yes
+        <% else %>
+          No
+        <% end %>
+      </dd>
+    </dl>
   </div>
 </div>
-<p>
-  <strong>Available here</strong>
-</p>
+
+<h4 class = "text-center">Available here</h4>
+
 <div class="row">
-      <% @product.locations.each do |l| %>
-        <div class="col-sm-4">
-          <h5><%= l.store %></h5>
-          <iframe width="300" height="300" frameborder="0" style="border:0"
-          src="<%= google_map(l.place_id) %>
-          "
-          allowfullscreen>
-          </iframe>
-        </div>
-      <% end %>
+  <% @product.locations.each do |l| %>
+    <div class="col-sm-4">
+      <h5><%= l.store %></h5>
+      <iframe width="300" height="300" frameborder="0" style="border:0"
+      src="<%= google_map(l.place_id) %>
+      "
+      allowfullscreen>
+      </iframe>
+    </div>
+  <% end %>
 </div>
 <div class = "text-center">
   <% if current_admin %>
