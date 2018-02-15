@@ -3,11 +3,13 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :edit, :update, :destroy]
 
   def index
-    @products = Product.all
+    # @products = Product.all
     if params[:search]
-      @products = Product.search(params[:search]).order("created_at DESC")
+      @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per_page(2)
     else
-      @products = Product.all.order('created_at DESC')
+      @products = Product.order(:item).page(params[:page]).per_page(2)
+
+      # @products = Product.all.order('created_at DESC')
     end
   end
 

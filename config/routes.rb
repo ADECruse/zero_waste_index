@@ -8,12 +8,12 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  get 'static_pages/home'
+  # get 'static_pages/rating'
 
   get  '/howto', to: 'static_pages#how_to'
   get  '/contact', to: 'static_pages#contact'
   get  '/about', to: 'static_pages#about'
-
+  get  '/ratings', to: 'static_pages#ratings'
   resources :products
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

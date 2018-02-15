@@ -4,7 +4,11 @@
 <div class="row">
   <div class="col-sm-4">
     <p>
-      <%= image_tag(@product.picture.downcase, size: 300) %>
+      <% if asset_exist?(@product.picture.downcase) %>
+        <%= image_tag(@product.picture.downcase, size: 300) %>
+      <% else %>
+        <%= image_tag("placeholder.svg", size: 300) %>
+      <% end %>
     </p>
   </div>
   <div class="col-sm-8">
@@ -57,7 +61,8 @@
 </div>
 <div class = "text-center">
   <% if current_admin %>
-    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-light" %>
+    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %>
+    <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
   <% end %>
   <%= link_to 'Back', products_path, class: "btn btn-light" %>
 </div>
