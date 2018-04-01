@@ -4,8 +4,8 @@
 <div class="row">
   <div class="col-sm-4">
     <p>
-      <% if asset_exist?(@product.picture.downcase) %>
-        <%= image_tag(@product.picture.downcase, size: 300) %>
+      <% if @product.picture? %>
+        <%= image_tag(@product.picture.url, size: 300) %>
       <% else %>
         <%= image_tag("placeholder.svg", size: 300) %>
       <% end %>

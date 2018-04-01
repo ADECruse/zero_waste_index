@@ -15,8 +15,8 @@
     <% @products.each do |product| %>
       <div class="row">
         <div class="col-sm-4">
-          <% if asset_exist?(product.picture.downcase) %>
-            <%= link_to(image_tag(product.picture.downcase, size: 150), product) %>
+          <% if product.picture? %>
+            <%= link_to(image_tag(product.picture.url, size: 150), product) %>
           <% else %>
             <%= image_tag("placeholder.svg", size: 150) %>
           <% end %>
@@ -38,37 +38,7 @@
             <%= link_to 'More info', product, class: "btn btn-light" %>
           </p>
         </div>
-        <!-- <div class="card text-center bg-light mb-3">
-          <% if asset_exist?(product.picture.downcase) %>
-            <%= image_tag(product.picture.downcase, class: "card-img-top") %>
-          <% else %>
-            <%= image_tag("placeholder.svg", class: "card-img-top") %>
-          <% end %>
-          <div class="card-body">
-            <h3 class="card-title"><%= product.item %></h3>
-            <%= link_to 'Show', product, type: "button", class: "btn btn-light" %>
-             <h5 class="card-title">Description</h5>
-            <p class="card-text">
-              <% if product.description.blank? == true %>
-                None available
-              <% else %>
-                <%= product.description %>
-              <% end %>
-            </p>
-            <h5 class="card-title">Packaging</h5>
-            <p class="card-text"><%= product.packaging %></p>
-            <h5 class="card-title">Plastic Free?</h5>
-            <p class="card-text">
-              <% if product.plastic_free == true %>
-                Yes
-              <% else %>
-                No
-              <% end %>
-            </p> -->
-            <!-- <h5 class="card-title">Star Rating</h5>
-            <p class="card-text"><%= product.rating %>/5</p>
-          </div>
-        </div> -->
+        
       </div>
     <%end%>
     <%= will_paginate @products, class: "text-center"%>
