@@ -2,10 +2,17 @@
 
 one:
   item: MyString
+  picture: MyString
+  description: MyText
   packaging: MyString
-  location: MyText
+  rating: MyInteger
+  plastic_free: MyBoolean
+
 
 two:
   item: MyString
+  picture: MyString
+  description: MyText
   packaging: MyString
-  location: MyText
+  rating: MyInteger
+  plastic_free: MyBoolean

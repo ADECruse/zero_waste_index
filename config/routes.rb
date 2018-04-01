@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  # get 'static_pages/rating'
+
 
   get  '/howto', to: 'static_pages#how_to'
   get  '/contact', to: 'static_pages#contact'
