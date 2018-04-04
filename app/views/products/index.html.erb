@@ -10,8 +10,6 @@
   <% end %>
 </div>
 
-    <!-- <div class="row justify-content-md-center"> -->
-
     <% @products.each do |product| %>
       <div class="row">
         <div class="col-sm-4">
@@ -43,8 +41,6 @@
     <%end%>
     <%= will_paginate @products, class: "text-center"%>
 
-<!-- </div> -->
     <% if @products.blank? %>
       <h5>There are no products containing the term <%= params[:search] %>.</h5>
     <% end %>
-  <!-- </div> -->

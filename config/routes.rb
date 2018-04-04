@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-
-
   get  '/howto', to: 'static_pages#how_to'
   get  '/contact', to: 'static_pages#contact'
   get  '/about', to: 'static_pages#about'

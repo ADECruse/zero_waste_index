@@ -15,9 +15,6 @@
       <li class="<%= 'nav-item active' if current_page?(howto_path) %>">
         <%= link_to "How To", howto_path, class:"nav-link" %>
       </li>
-      <!-- <li class="<%= 'nav-item active' if current_page?(contact_path) %>">
-        <%= link_to "Contact", contact_path, class:"nav-link" %>
-      </li> -->
       <% if current_admin %>
         <li class="<%= 'nav-item active' if current_page?(products_new_path) %>">
           <%= link_to "New", products_new_path, class:"nav-link" %>

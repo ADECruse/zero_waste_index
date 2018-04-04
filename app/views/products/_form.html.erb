@@ -42,7 +42,6 @@
   </div>
 
   <!-- form check field where you select which location a product belongs to -->
-
   <div class="form-check">
     <%= form.collection_check_boxes :location_ids, Location.all, :id, :store do |m| %>
     <%= m.check_box %> <%= m.label class: "form-check-label"%>

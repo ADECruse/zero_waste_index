@@ -1,6 +1,7 @@
-
 <% provide(:title, "#{@product.item}") %>
+
 <p id="notice"><%= notice %></p>
+
 <div class="row">
   <div class="col-sm-4">
     <p>
@@ -52,13 +53,12 @@
     <div class="col-sm-4">
       <h5><%= l.store %></h5>
       <iframe width="300" height="300" frameborder="0" style="border:0"
-      src="<%= google_map(l.place_id) %>
-      "
-      allowfullscreen>
+          src="<%= google_map(l.place_id) %>"allowfullscreen>
       </iframe>
     </div>
   <% end %>
 </div>
+
 <div class = "text-center">
   <% if current_admin %>
     <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %>
