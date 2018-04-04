@@ -10,27 +10,17 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "item should be present" do
-   @product.item = ""
-   assert_not @product.valid?
-  end
-
-  test "description should be present" do
-   @product.description = ""
-   assert_not @product.valid?
-  end
-
-  test "packaging should be present" do
-   @product.packaging = ""
+   @product.item = "   "
    assert_not @product.valid?
   end
 
   test "rating should be present" do
-   @product.rating = 1..5
+   @product.rating = 6..10
    assert_not @product.valid?
   end
 
   test "plastic_free should be present" do
-   @product.plastic_free = true
+   @product.plastic_free = nil
    assert_not @product.valid?
   end
 

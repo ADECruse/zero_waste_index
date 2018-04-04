@@ -38,15 +38,15 @@
 
   <div class="form-group">
     <%= form.label :picture %>
-    <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: :product_picture, class: "form-control" %>
+    <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: :product_picture, class: "form-control-file" %>
   </div>
 
   <!-- form check field where you select which location a product belongs to -->
-  <div class="form-check">
-    <%= form.collection_check_boxes :location_ids, Location.all, :id, :store do |m| %>
-    <%= m.check_box %> <%= m.label class: "form-check-label"%>
-    <% end %>
-  </div>
+  <%= form.collection_check_boxes :location_ids, Location.all, :id, :store do |m| %>
+    <div class="form-check">
+    <%= m.check_box class: "form-check-input", type: "checkbox" %> <%= m.label class: "form-check-label" %>
+    </div>
+  <% end %>
 
   <div class="actions text-center">
     <%= form.submit class: "btn btn-light"%>
