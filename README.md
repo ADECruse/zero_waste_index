@@ -17,8 +17,6 @@ Features
 
 * Search and find products by name e.g "Apple".
 
-* Displays product information using Bootstrap's card styles.
-
 * Each product has a picture, description, star rating, and whether the packaging is plastic free.
 
 * Currently can import product data from a Excel style .CSV document.

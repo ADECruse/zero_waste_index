@@ -14,9 +14,9 @@
       <div class="row">
         <div class="col-sm-4">
           <% if product.picture? %>
-            <%= link_to(image_tag(product.picture.url, size: 150), product) %>
+            <%= link_to(image_tag(product.picture.url, :width => 150, :height => 150), product) %>
           <% else %>
-            <%= link_to(image_tag("placeholder.svg", size: 150), product) %>
+            <%= link_to(image_tag("placeholder.svg", :width => 150, :height => 150), product) %>
           <% end %>
         </div>
         <div class="col-sm-8">

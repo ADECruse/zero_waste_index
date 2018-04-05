@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates :item,  presence: true, uniqueness: { case_sensitive: false }
   validates :rating, presence: true
-  validates :plastic_free, presence: true
   validate  :picture_size
 
 

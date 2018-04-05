@@ -6,9 +6,9 @@
   <div class="col-sm-4">
     <p>
       <% if @product.picture? %>
-        <%= image_tag(@product.picture.url, size: 300) %>
+        <%= image_tag(@product.picture.url, :width => 300, :height => 300) %>
       <% else %>
-        <%= image_tag("placeholder.svg", size: 300) %>
+        <%= image_tag("placeholder.svg", :width => 300, :height => 300) %>
       <% end %>
     </p>
   </div>
@@ -51,7 +51,7 @@
 <div class="row">
   <% @product.locations.each do |l| %>
     <div class="col-sm-4">
-      <h5><%= l.store %></h5>
+        <h5><%=l.store%></h5>
       <iframe width="300" height="300" frameborder="0" style="border:0"
           src="<%= google_map(l.place_id) %>"allowfullscreen>
       </iframe>

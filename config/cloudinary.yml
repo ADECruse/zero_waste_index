@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: cruse
+  api_key: '788697831921952'
+  api_secret: R0SHGHEOuV0dV_St9U_LgLUnObU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: cruse
+  api_key: '788697831921952'
+  api_secret: R0SHGHEOuV0dV_St9U_LgLUnObU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: cruse
+  api_key: '788697831921952'
+  api_secret: R0SHGHEOuV0dV_St9U_LgLUnObU
+  enhance_image_tag: true
+  static_image_support: false
