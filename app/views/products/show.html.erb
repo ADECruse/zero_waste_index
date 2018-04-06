@@ -45,20 +45,36 @@
     </dl>
   </div>
 </div>
-
-<h4 class = "text-center">Available here</h4>
-
+<h4 class="text-center">Available here</h4>
+<% if @product.locations.empty? %>
+  <p class="text-center">Sorry currently no zero waste stores carry this item</p>
+<% end %>
 <div class="row">
-  <% @product.locations.each do |l| %>
-    <div class="col-sm-4">
-        <h5><%=l.store%></h5>
-      <iframe width="300" height="300" frameborder="0" style="border:0"
-          src="<%= google_map(l.place_id) %>"allowfullscreen>
-      </iframe>
-    </div>
-  <% end %>
-</div>
+  <div class="col-sm-12">
+    <div id="accordion">
+      <% @product.locations.each do |l| %>
+        <div class="card">
+          <div class="card-header" id="heading<%=l.id%>"
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%=l.id%>" aria-expanded="false" aria-controls="collapse<%=l.id%>">
+                <%=l.store%>
+              </button>
+            </h5>
+          </div>
 
+          <div id="collapse<%=l.id%>" class="collapse" aria-labelledby="heading<%=l.id%>" data-parent="#accordion">
+            <div class="card-body embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item"
+                  src="<%= google_map(l.place_id) %>"allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
 <div class = "text-center">
   <% if current_admin %>
     <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %>
