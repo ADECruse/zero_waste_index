@@ -8,7 +8,7 @@ class Product < ApplicationRecord
 
 
   def self.search(search)
-    where("item ILIKE ?", "%#{search}%")
+    where("item LIKE ?", "%#{search}%")
   end
 
   private
